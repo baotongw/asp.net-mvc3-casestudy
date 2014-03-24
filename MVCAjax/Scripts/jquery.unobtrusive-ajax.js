@@ -5,7 +5,9 @@
 ** Copyright (C) Microsoft Corporation. All rights reserved.
 */
 
-/*jslint white: true, browser: true, onevar: true, undef: true, nomen: true, eqeqeq: true, plusplus: true, bitwise: true, regexp: true, newcap: true, immed: true, strict: false */
+/*jslint white: true, browser: true, onevar: true, undef: true, nomen: true, 
+  eqeqeq: true, plusplus: true, bitwise: true, regexp: true, newcap: true, 
+  immed: true, strict: false */
 /*global window: false, jQuery: false */
 
 (function ($) {
@@ -37,7 +39,8 @@
     function asyncOnSuccess(element, data, contentType) {
         var mode;
 
-        if (contentType.indexOf("application/x-javascript") !== -1) {  // jQuery already executes JavaScript for us
+        if (contentType.indexOf("application/x-javascript") !== -1) {
+            // jQuery already executes JavaScript for us
             return;
         }
 

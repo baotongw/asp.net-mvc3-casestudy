@@ -1,0 +1,11 @@
+*.suo
+*.dll
+*.pdb
+*.data
+*.orig
+*.cache
+*.exe
+*~
+*.swp
+MVCAjax\obj\Debug\*
+
