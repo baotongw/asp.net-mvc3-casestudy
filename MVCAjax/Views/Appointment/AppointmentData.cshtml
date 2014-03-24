@@ -1,0 +1,11 @@
+﻿@model IEnumerable<MVCAjax.Models.Appointment>
+@{
+    Layout = null;
+}
+
+@foreach (MVCAjax.Models.Appointment appt in Model) { 
+    <tr>
+        <td>@Html.DisplayFor(m=>appt.ClientName)</td>
+        <td>@Html.DisplayFor(m=>appt.Date)</td>
+    </tr>
+}
