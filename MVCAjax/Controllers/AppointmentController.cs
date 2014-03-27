@@ -20,7 +20,7 @@ namespace MVCAjax.Controllers
             return View("Index", (object)id);
         }
 
-        public ViewResult AppointmentData(string id)
+        public ActionResult AppointmentData(string id)
         {
             IEnumerable<Appointment> data = new[] { 
                 new Appointment {ClientName="Joe", Date=DateTime.Parse("1/1/2012")},
@@ -31,11 +31,50 @@ namespace MVCAjax.Controllers
                 new Appointment {ClientName = "Bob", Date = DateTime.Parse("2/25/2013")}
             };
 
+            System.Threading.Thread.Sleep(1000);//fake data process
+
             if (!string.IsNullOrEmpty(id) && id != "All") {
                 data = data.Where(e => e.ClientName == id);
             }
 
-            return View(data);
+            if (Request.IsAjaxRequest())
+            {
+                return Json(data.Select(m => new
+                {
+                    ClientName = m.ClientName,
+                    Date = m.Date.ToShortDateString()
+                }), JsonRequestBehavior.AllowGet);
+            }
+            else
+            {
+                return View(data);
+            }
         }
+
+        //public JsonResult JsonData(string id)
+        //{
+        //    IEnumerable<Appointment> data = new[] {
+        //        new Appointment { ClientName = "Joe", Date = DateTime.Parse("1/1/2012")},
+        //        new Appointment { ClientName = "Joe", Date = DateTime.Parse("2/1/2012")},
+        //        new Appointment { ClientName = "Joe", Date = DateTime.Parse("3/1/2012")},
+        //        new Appointment { ClientName = "Jane", Date = DateTime.Parse("1/20/2012")},
+        //        new Appointment { ClientName = "Jane", Date = DateTime.Parse("1/22/2012")},
+        //        new Appointment {ClientName = "Bob", Date = DateTime.Parse("2/25/2012")},
+        //        new Appointment {ClientName = "Bob", Date = DateTime.Parse("2/25/2013")}
+        //        };
+
+        //    if (!string.IsNullOrEmpty(id) && id != "All")
+        //    {
+        //        data = data.Where(e => e.ClientName == id);
+        //    }
+
+        //    var formattedData = data.Select(m => new
+        //    {
+        //        ClientName = m.ClientName,
+        //        Date = m.Date.ToShortDateString()
+        //    });
+
+        //    return Json(formattedData, JsonRequestBehavior.AllowGet);
+        //}
     }
 }

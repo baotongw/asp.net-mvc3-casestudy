@@ -2,12 +2,45 @@
     ViewBag.Title = "Index";
     AjaxOptions ajaxOpts = new AjaxOptions
     {
-        UpdateTargetId = "tabledata"
+        //UpdateTargetId = "tabledata", //when use ajax call ignore udpateTargetId
+        //InsertionMode = InsertionMode.InsertAfter,
+        //Confirm = "Are you sure to submit the form?",
+        LoadingElementId = "loading",
+        LoadingElementDuration = 2000,
+        OnBegin = "OnBegin",
+        OnSuccess = "OnSuccess",
+        OnFailure = "OnFailure",
+        OnComplete = "OnComplete",
     };
 }
 
-<h4>Appointment List</h4>
+<script>
+    function OnBegin() {
+        console.log("This is the OnBegin Callback");
+    }
+    function OnSuccess(data) {
+        console.log("This is the OnSuccessCallback: ");
+        console.log(data);
+        var $table = $("#tabledata"), $row;
+        $table.empty();
+        
+        for (var i = 0; i < data.length; i++) {
+            $row = '<tr><td>' + data[i].ClientName + '</td><td>' + data[i].Date + '</td></tr>';
+            $table.append($row);
+        }
+    }
+    function OnFailure(request, error) {
+        console.log("This is the OnFailure Callback:" + error);
+    }
+    function OnComplete(request, status) {
+        console.log("This is the OnComplete Callback: " + status);
+    }
+</script>
 
+<h4>Appointment List</h4>
+<div id="loading" style="display:none;">
+    <p style="color:red; font-size:large; font-weight:bold;">Page Loading ... </p>
+</div>
 @using (Ajax.BeginForm("AppointmentData", ajaxOpts))
 {
     <table>
@@ -23,4 +56,10 @@
         @Html.DropDownList("id", new SelectList(new[] { "All", "Joe", "Jane", "Bob" }, (Model ?? "All")))
         <input type="submit" value="Submit" />
     </p>
+}
+
+@foreach (string str in new[] { "All", "Joe", "Jane", "Bob" }) {
+    <div style="margin-right:5px; float:left">
+        @Ajax.ActionLink(str, "AppointmentData", new { id = str }, ajaxOpts)
+    </div>
 }
