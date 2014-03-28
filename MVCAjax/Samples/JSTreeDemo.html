@@ -1,0 +1,90 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>JSTree plugin demo</title>
+    <link rel="stylesheet" type="text/css" href="../Plugins/jsTree/css/jsTreeStyle.css" />
+</head>
+<body>
+    <div id="target">
+       <!-- <ul> parse html code to tree
+          <li>
+              Root node 1
+              <ul>
+                  <li>Child node +1</li>
+                  <li>Child node +2</li>
+                  <li>Child node +3</li>
+                  jstree-clicked will default this node to select state and open it parent dropdown
+                  <li><a href="#" class="jstree-clicked">Child</a></li>
+              </ul>
+          </li>            
+          <li>Root node 2</li>
+        </ul>-->
+    </div>
+
+    <script src="../Scripts/jquery-1.11.0.min.js"></script>
+    <script src="../Plugins/jsTree/js/jstree.js"></script>
+    <script>
+        var data = [
+           {
+               text: 'Simple root node',
+               icon:false,
+           },
+           {
+               text: 'Root node 2',
+               icon: false,//hide the icon
+               state: {
+                   opened: true,
+                   selected: true
+               },
+               children: [
+                 {
+                     text: 'Child 1',
+                     icon: false,
+                 },
+                 {
+                     text: 'Child 2',
+                     icon: false,
+                 }
+               ]
+           }
+        ];
+
+        var alternativeData = [
+               { "id": "ajson1", 'icon': false, "parent": "#", "text": "Simple root node" },
+               { "id": "ajson2", 'icon': false, "parent": "#", "text": "Root node 2" },
+               { "id": "ajson3", 'icon': false, "parent": "ajson2", "text": "Child 1" },
+               { "id": "ajson4", 'icon': false, "parent": "ajson2", "text": "Child 2" },
+        ];
+
+        var ajaxData = {
+            url: function (node) {
+                console.log('url');
+                console.log(node);
+                return data;
+            },
+            data: function (node) {
+                console.log('data');
+                console.log(node);
+                return data;
+            }
+        };
+
+        $(document).ready(function () {
+            $('#target').jstree({
+                core: {
+                    data: data
+                },
+
+                checkbox: {
+                    keep_selected_style: false
+                },
+
+                search: {
+                },
+
+                plugins: ['checkbox', 'search']
+            });
+        });
+    </script>
+</body>
+</html>
