@@ -1,5 +1,7 @@
+bin
 *.suo
 *.dll
+obj
 *.pdb
 *.data
 *.orig
