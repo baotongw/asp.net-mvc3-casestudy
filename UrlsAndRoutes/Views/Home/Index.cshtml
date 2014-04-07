@@ -5,4 +5,14 @@
 <h2>@ViewBag.Message</h2>
 <p>
     To learn more about ASP.NET MVC visit <a href="http://asp.net/mvc" title="ASP.NET MVC Website">http://asp.net/mvc</a>.
+    <br />
+    Generate URL Link with Url.Action directly, Test URL is: @Url.Action("Index", "Home", new { id = "MyId" })
+</p>
+
+<p>
+    Sometimes it is useful to treat controller and action just like any other variables, and to generate a
+link or URL by providing a collection of name/value pairs.
+    <br />
+    @Html.RouteLink("Routed Link", new { controller = "Home", action = "About", id="MyID"})
+    @Html.RouteLink("Routed Link without specific controller and action", new { a = "Home", b = "About", c="MyID"})
 </p>

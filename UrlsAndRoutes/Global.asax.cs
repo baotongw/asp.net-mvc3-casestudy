@@ -6,6 +6,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
+using UrlsAndRoutes.Infrastructure;
 
 namespace UrlsAndRoutes
 {
@@ -21,20 +22,51 @@ namespace UrlsAndRoutes
 
         public static void RegisterRoutes(RouteCollection routes)
         {
-            routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
+            #region used for static file route
+            //routes.RouteExistingFiles = true;
+
+            //routes.MapRoute("DiskFile", "Content/StaticContent.html",
+            //    new { controller = "Account", action = "LogOn" },
+            //    new { customConstraint = new UserAgentConstraint("IE") });
+
+            //routes.IgnoreRoute("Content/{filename}.html");
+
+            //routes.MapRoute("DiskFile", "Content/StaticContent.html",
+            //new
+            //{
+            //    controller = "Account",
+            //    action = "LogOn",
+            //},
+            //new
+            //{
+            //    customConstraint = new UserAgentConstraint("IE")
+            //});
+            #endregion
+
+            //routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
+            //routes.MapRoute("NewRoute", "App/Do{action}", new { controller = "Home" });
+
+            //There are two reasons for naming your routes:
+            //  • As a reminder of the purpose of the route
+            //  • So that you can select a specific route to be used to generate an outgoing URL
+            routes.MapRoute("MyRoute", "{controller}/{action}/{id}",
+            new { controller = "Home", action = "Index", id = UrlParameter.Optional });
 
             //Template default route, optional segments
-            //routes.MapRoute(
-            //    "Default", // Route name
-            //    "{controller}/{action}/{id}", // URL with parameters
-            //    new { controller = "Home", action = "Index", id = UrlParameter.Optional } // Parameter defaults
-            //);
+            routes.MapRoute(
+                "Default", // Route name
+                "{controller}/{action}/{id}", // URL with parameters
+                new { controller = "Home", action = "Index", id = UrlParameter.Optional } // Parameter defaults
+            );
 
             //Route myRoute = new Route("{controller}/{action}", new MvcRouteHandler());
             //routes.Add("MyRoute", myRoute);
 
             //custom segment variables
-            routes.MapRoute("customRoute", "{controller}/{action}/{id}", new { controller = "Home", action = "Index", id = "DefaultId" });
+            //routes.MapRoute("customRoute",
+            //    "{controller}/{action}/{id}",
+            //    new { controller = "Home", action = "Index", id = "DefaultId" },
+            //    new[] { "UrlsAndRoutes.Controllers" });//Specify the namespace that route will looking at first priority
 
             ////firset segment start with the letter X
             //routes.MapRoute("", "X{controller}/{action}");
@@ -51,7 +83,18 @@ namespace UrlsAndRoutes
             //routes.MapRoute("ShopSchema2", "Shop/OldAction", new { controller = "Home", action = "Index" });
 
             //Addtional segments, There is no upper limit to the number of segments that the URL pattern in this route will match
-            routes.MapRoute("MyRoute", "{controller}/{action}/{id}/{*catchall}",new { controller = "Home", action = "Index", id = UrlParameter.Optional });
+            //routes.MapRoute("MyRoute",
+            //    "{controller}/{action}/{id}/{*catchall}",
+            //    new { controller = "Home", action = "Index", id = UrlParameter.Optional },
+            //    new
+            //    {
+            //        controller = "^H.*",
+            //        action = "^Index$|^About$",
+            //        httpmethod = new HttpMethodConstraint(new[] { "GET" }),
+            //        customConstraint = new UserAgentConstraint("IE")
+            //    },
+            //    //the route will match URLs only when the controller variable begins with the letter H and the action variable is Index or About
+            //    new[] { "URLsAndRoutes.Controllers" });
 
         }
 

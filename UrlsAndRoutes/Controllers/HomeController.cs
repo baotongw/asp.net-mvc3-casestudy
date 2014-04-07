@@ -33,5 +33,30 @@ namespace UrlsAndRoutes.Controllers
             ViewBag.CustomVariable = id;
             return View();
         }
+
+        public ViewResult MyActionMethod()
+        {
+            string myActionUrl = Url.Action("Index", new { id = "TestID" });
+
+            string myRouteUrl = Url.RouteUrl(new { });
+
+            return View("Index");
+        }
+
+        public ActionResult MyActionRedirect()
+        {
+            return RedirectToAction("Index");
+        }
+
+        public ActionResult MyOtherActionMethod() { 
+            //If you want to send a redirect using a URL generated from just object properties, you can use the
+            //RedirectToRoute method, as shown in Listing 11-41.
+            //Listing 11-41. Redirecting to a URL Generated from Properties in an Anonymous Type
+
+            return RedirectToRoute(new { controller = "Home", action = "Index", id = "MyID" });
+
+            //This method also returns a RedirectToRouteResult object and has exactly the same effect as calling
+            //the RedirectToAction method.
+        }
     }
 }
