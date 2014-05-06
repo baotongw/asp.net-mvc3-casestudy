@@ -24,6 +24,87 @@
     <script src="../Scripts/jquery-1.11.0.min.js"></script>
     <script src="../Plugins/jsTree/js/jstree.js"></script>
     <script>
+        var treeData = [
+            {
+                text: 'Category',
+                icon: false,//hide the icon
+                state: {
+                    opened: true,
+                    selected: false
+                },
+                children: [
+                  {
+                      text: 'Accessories',
+                      icon: false
+                  },
+                  {
+                      text: 'Bikes',
+                      icon: false,
+                      state: {
+                          opened: false,
+                          selected: false
+                      },
+                      children: [
+                          {
+                              text: 'Mountain Bikes',
+                              icon: false,
+                          },
+                          {
+                              text: 'Road Bikes',
+                              icon: false,
+                          },
+                          {
+                              text: 'Touring Bikes',
+                              icon: false,
+                          }
+                      ]
+                  },
+                  {
+                      text: 'Clothing',
+                      icon: false,
+                      children: [
+                          {
+                              text: 'Bib-Shorts',
+                              icon: false,
+                          },
+                          {
+                              text: 'Caps',
+                              icon: false,
+                          },
+                          {
+                              text: 'Gloves',
+                              icon: false,
+                          },
+                          {
+                              text: 'Jerseys',
+                              icon: false,
+                          },
+                          {
+                              text: 'Shorts',
+                              icon: false,
+                          },
+                          {
+                              text: 'Socks',
+                              icon: false,
+                          },
+                          {
+                              text: 'Tights',
+                              icon: false,
+                          },
+                          {
+                              text: 'Vests',
+                              icon: false,
+                          }
+                      ]
+                  },
+                  {
+                      text: 'Components',
+                      icon: false,
+                  }
+                ]
+            }
+        ];
+
         var data = [
            {
                text: 'Simple root node',
@@ -52,8 +133,11 @@
         var alternativeData = [
                { "id": "ajson1", 'icon': false, "parent": "#", "text": "Simple root node" },
                { "id": "ajson2", 'icon': false, "parent": "#", "text": "Root node 2" },
-               { "id": "ajson3", 'icon': false, "parent": "ajson2", "text": "Child 1" },
+               { "id": "ajson3", 'icon': false, "parent": "#", "text": "Parent node 3" },
                { "id": "ajson4", 'icon': false, "parent": "ajson2", "text": "Child 2" },
+               { "id": "ajson5", 'icon': false, "parent": "ajson1", "text": "Child 1" },
+               { "id": "ajson6", 'icon': false, "parent": "ajson3", "text": "Child 2" },
+               { "id": "ajson7", 'icon': false, "parent": "ajson3", "text": "Child 2" },
         ];
 
         var ajaxData = {
@@ -72,7 +156,7 @@
         $(document).ready(function () {
             $('#target').jstree({
                 core: {
-                    data: data
+                    data: treeData
                 },
 
                 checkbox: {
@@ -82,7 +166,7 @@
                 search: {
                 },
 
-                plugins: ['checkbox', 'search']
+                //plugins: ['checkbox', 'search']
             });
         });
     </script>

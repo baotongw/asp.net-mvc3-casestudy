@@ -1,0 +1,44 @@
+﻿@model ModelTemplate.Models.Person
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Person</h2>
+
+<p>Below used EidtorFor helper to show data</p>
+<div class="field">
+    <label>Name:</label>
+    @Html.EditorFor(x => x.FirstName)
+    @Html.EditorFor(x => x.LastName)
+</div>
+
+<div class="field">
+    <label>Approved:</label>
+    @Html.EditorFor(x => x.IsApproved)
+</div>
+
+<p>Below used DisplayFor helper to show data</p>
+
+<div class="field">
+    <label>Name:</label>
+    @Html.DisplayFor(x => x.FirstName)
+    @Html.DisplayFor(x => x.LastName)
+</div>
+
+<div class="field">
+    <label>Approved:</label>
+    @Html.DisplayFor(x => x.IsApproved)
+</div>
+
+
+<p>Below html used DisplayForModel method to generate</p>
+
+@Html.DisplayForModel()
+
+<p>Below html used EditorForModel method to generate</p>
+
+@Html.EditorForModel()
+
+<p>Below html used LabelForModel method to generate</p>
+
+@Html.LabelForModel()
