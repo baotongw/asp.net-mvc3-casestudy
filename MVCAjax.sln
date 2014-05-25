@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UrlsAndRoutes", "UrlsAndRou
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WorkingWithAreas", "WorkingWithAreas\WorkingWithAreas.csproj", "{CAE1807B-D48F-4C8E-8E4F-2F8EB6272096}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ControllersAndActions", "ControllersAndActions\ControllersAndActions.csproj", "{8DA9A786-7750-4E62-BDF6-1374ED5A4285}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -25,6 +27,10 @@ Global
 		{CAE1807B-D48F-4C8E-8E4F-2F8EB6272096}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CAE1807B-D48F-4C8E-8E4F-2F8EB6272096}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CAE1807B-D48F-4C8E-8E4F-2F8EB6272096}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8DA9A786-7750-4E62-BDF6-1374ED5A4285}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8DA9A786-7750-4E62-BDF6-1374ED5A4285}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8DA9A786-7750-4E62-BDF6-1374ED5A4285}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8DA9A786-7750-4E62-BDF6-1374ED5A4285}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

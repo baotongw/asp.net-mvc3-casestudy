@@ -19,3 +19,24 @@ c:\users\user\documents\visual studio 2012\Projects\MVCAjax\MVCAjax\bin\System.W
 c:\users\user\documents\visual studio 2012\Projects\MVCAjax\MVCAjax\obj\Debug\MVCAjax.csprojResolveAssemblyReference.cache
 c:\users\user\documents\visual studio 2012\Projects\MVCAjax\MVCAjax\obj\Debug\MVCAjax.dll
 c:\users\user\documents\visual studio 2012\Projects\MVCAjax\MVCAjax\obj\Debug\MVCAjax.pdb
+D:\Sql Reporting\try_git\MVCAjax\bin\MVCAjax.dll
+D:\Sql Reporting\try_git\MVCAjax\bin\MVCAjax.pdb
+D:\Sql Reporting\try_git\MVCAjax\bin\EntityFramework.dll
+D:\Sql Reporting\try_git\MVCAjax\bin\Microsoft.Web.Infrastructure.dll
+D:\Sql Reporting\try_git\MVCAjax\bin\System.Web.Helpers.dll
+D:\Sql Reporting\try_git\MVCAjax\bin\System.Web.Mvc.dll
+D:\Sql Reporting\try_git\MVCAjax\bin\System.Web.Providers.dll
+D:\Sql Reporting\try_git\MVCAjax\bin\System.Web.Razor.dll
+D:\Sql Reporting\try_git\MVCAjax\bin\System.Web.WebPages.Deployment.dll
+D:\Sql Reporting\try_git\MVCAjax\bin\System.Web.WebPages.dll
+D:\Sql Reporting\try_git\MVCAjax\bin\System.Web.WebPages.Razor.dll
+D:\Sql Reporting\try_git\MVCAjax\bin\EntityFramework.xml
+D:\Sql Reporting\try_git\MVCAjax\bin\System.Web.Helpers.xml
+D:\Sql Reporting\try_git\MVCAjax\bin\System.Web.Mvc.xml
+D:\Sql Reporting\try_git\MVCAjax\bin\System.Web.Razor.xml
+D:\Sql Reporting\try_git\MVCAjax\bin\System.Web.WebPages.xml
+D:\Sql Reporting\try_git\MVCAjax\bin\System.Web.WebPages.Deployment.xml
+D:\Sql Reporting\try_git\MVCAjax\bin\System.Web.WebPages.Razor.xml
+D:\Sql Reporting\try_git\MVCAjax\obj\Debug\MVCAjax.csprojResolveAssemblyReference.cache
+D:\Sql Reporting\try_git\MVCAjax\obj\Debug\MVCAjax.dll
+D:\Sql Reporting\try_git\MVCAjax\obj\Debug\MVCAjax.pdb
