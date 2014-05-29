@@ -23,6 +23,7 @@ namespace ModelTemplate.Models
         [Display(Name="Home address")]
         public Address HomeAddress { get; set; }
         public bool IsApproved { get; set; }
+        [UIHint("Enum")]
         public Role Role { get; set; }
     }
 
@@ -38,6 +39,7 @@ namespace ModelTemplate.Models
     public enum Role
     {
         Admin,
-        User
+        User,
+        Guest
     }
 }

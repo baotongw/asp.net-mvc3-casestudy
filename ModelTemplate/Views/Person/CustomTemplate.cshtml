@@ -1,0 +1,13 @@
+﻿@model ModelTemplate.Models.Person
+
+@{
+    ViewBag.Title = "CustomTemplate";
+}
+
+<h2>CustomTemplate</h2>
+
+
+@*@Html.Partial("~/Views/Shared/EditorTemplate/Role.cshtml", @Model.Role);*@
+@Html.EditorForModel();
+
+@Html.DisplayForModel();

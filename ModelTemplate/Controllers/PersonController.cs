@@ -27,5 +27,21 @@ namespace ModelTemplate.Controllers
 
             return View(person);
         }
+
+        public ActionResult CustomTemplate()
+        {
+            Person person = new Person()
+            {
+                FirstName = "Wang",
+                PersonId = 1000,
+                LastName = "baotong",
+                BirthDate = new DateTime(1989, 2, 21),
+                HomeAddress = new Address() { Line1 = "1", Line2 = "2", City = "beijing", PostalCode = "100081", Country = "China" },
+                IsApproved = true,
+                Role = Role.Admin
+            };
+
+            return View(person);
+        }
     }
 }

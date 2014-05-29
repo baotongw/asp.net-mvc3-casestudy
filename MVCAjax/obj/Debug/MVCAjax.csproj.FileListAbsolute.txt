@@ -37,6 +37,5 @@ D:\Sql Reporting\try_git\MVCAjax\bin\System.Web.Razor.xml
 D:\Sql Reporting\try_git\MVCAjax\bin\System.Web.WebPages.xml
 D:\Sql Reporting\try_git\MVCAjax\bin\System.Web.WebPages.Deployment.xml
 D:\Sql Reporting\try_git\MVCAjax\bin\System.Web.WebPages.Razor.xml
-D:\Sql Reporting\try_git\MVCAjax\obj\Debug\MVCAjax.csprojResolveAssemblyReference.cache
 D:\Sql Reporting\try_git\MVCAjax\obj\Debug\MVCAjax.dll
 D:\Sql Reporting\try_git\MVCAjax\obj\Debug\MVCAjax.pdb

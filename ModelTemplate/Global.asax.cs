@@ -26,7 +26,7 @@ namespace ModelTemplate
             routes.MapRoute(
                 "Default", // Route name
                 "{controller}/{action}/{id}", // URL with parameters
-                new { controller = "Person", action = "Index", id = UrlParameter.Optional } // Parameter defaults
+                new { controller = "Person", action = "CustomTemplate", id = UrlParameter.Optional } // Parameter defaults
             );
 
         }
