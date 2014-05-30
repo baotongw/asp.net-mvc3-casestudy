@@ -95,10 +95,14 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controllers\AppointmentController.cs" />
     <Compile Include="Controllers\PersonController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Infrastructure\AppointmentPropertuValidator.cs" />
+    <Compile Include="Infrastructure\ValidationModelBinder.cs" />
+    <Compile Include="Models\Appointment.cs" />
     <Compile Include="Models\Intities.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -194,6 +198,9 @@
     <Content Include="Views\Person\CustomTemplate.cshtml" />
     <Content Include="Views\Shared\DisplayTemplates\Role.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\Enum.cshtml" />
+    <Content Include="Views\Appointment\MakeBooking.cshtml" />
+    <Content Include="Views\Appointment\Completed.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\Boolean.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

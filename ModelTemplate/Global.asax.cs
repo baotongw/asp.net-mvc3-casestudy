@@ -6,6 +6,8 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
+using ModelTemplate.Models;
+using ModelTemplate.Infrastructure;
 
 namespace ModelTemplate
 {
@@ -26,7 +28,7 @@ namespace ModelTemplate
             routes.MapRoute(
                 "Default", // Route name
                 "{controller}/{action}/{id}", // URL with parameters
-                new { controller = "Person", action = "CustomTemplate", id = UrlParameter.Optional } // Parameter defaults
+                new { controller = "Appointment", action = "MakeBooking", id = UrlParameter.Optional } // Parameter defaults
             );
 
         }
@@ -37,6 +39,10 @@ namespace ModelTemplate
 
             // Use LocalDB for Entity Framework by default
             Database.DefaultConnectionFactory = new SqlConnectionFactory(@"Data Source=(localdb)\v11.0; Integrated Security=True; MultipleActiveResultSets=True");
+
+            //ModelBinders.Binders.Add(typeof(Appointment), new ValidationModelBinder());
+            //ModelValidatorProviders.Providers.Clear();
+            //ModelValidatorProviders.Providers.Add(new CustomValidationProvider());
 
             RegisterGlobalFilters(GlobalFilters.Filters);
             RegisterRoutes(RouteTable.Routes);

@@ -1,0 +1,22 @@
+﻿@using ModelTemplate.Models;
+@model Appointment
+
+@{
+    ViewBag.Title = "Make a booking";
+}
+
+<h4>Book An Appointment</h4>
+
+@using (Html.BeginForm())
+{
+    <p>如果指定ValidationSummary的第一个参数为true，则只显示model级别的错误信息</p>
+    @Html.ValidationSummary(true, "Your input have something invalid, please check!")
+
+    <p>Your name: @Html.EditorFor(m=>m.ClientName)</p>
+    @Html.ValidationMessageFor(m=>m.ClientName)
+    <p>Appointment Date: @Html.EditorFor(m=>m.Date)</p>
+    @Html.ValidationMessageFor(m=>m.Date)
+    <p>@Html.EditorFor(m=>m.TermsAccepted) I accept the terms & conditions</p>
+    @Html.ValidationMessageFor(m=>m.TermsAccepted)
+    <input type="submit" value="Make Booking" />
+}
